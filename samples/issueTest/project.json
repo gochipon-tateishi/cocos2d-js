@@ -16,6 +16,7 @@
         "src/ActionIntervalTest.js",
         "src/LabelBMFontTest.js",
         "src/SpritePlayTest.js",
+        "src/bmfontbug/BmFontbugTest.js",
         "src/PageViewTest.js"
     ]
 }
