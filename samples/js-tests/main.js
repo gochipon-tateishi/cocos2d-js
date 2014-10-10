@@ -105,6 +105,7 @@ cc.game.onStart = function(){
         for (var i = 0; i < paths.length; i++) {
             searchPaths.push(paths[i]);
         }
+        cc.ActionTween
         jsb.fileUtils.setSearchPaths(searchPaths);
     }
     
