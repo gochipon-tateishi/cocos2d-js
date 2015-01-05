@@ -1,17 +1,20 @@
 package com.cocos.EngineTest;
 
-import com.tencent.smtt.export.external.interfaces.IGameEngine;
+import org.cocos2dx.lib.Cocos2dxHelper;
+import org.cocos2dx.lib.Cocos2dxSoHelper;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.tencent.smtt.export.external.interfaces.IGameEngine;
+
 public class CurProcessActivity extends Activity {
 	
 	// ok. can use java vm
 	static IGameEngine gameEngineSource = null;
-			
+	
 	@Override
 	protected void onDestroy() {
 		this.setContentView(new LinearLayout( this ));
@@ -117,11 +120,21 @@ public class CurProcessActivity extends Activity {
 		}, 15000);
 	}
 	
+	public void testSoLoad()
+	{
+		Cocos2dxSoHelper.openCocosSo();
+		Cocos2dxHelper.nativeSetApkPath("11111111111");
+		Cocos2dxSoHelper.closeCocosSo();
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//startHelloWorldSingalView();
-		startHelloWorldNewView();
+		//startHelloWorldNewView();
 		//startHelloWorldNormal();
+		//System.loadLibrary("cocos2djs");
+		System.loadLibrary("switch");
+		testSoLoad();
 	}
 }
