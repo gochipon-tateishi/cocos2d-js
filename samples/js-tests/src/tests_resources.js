@@ -1087,3 +1087,11 @@ var g_ccs2 = [
     "res/cocosui/UIEditorTest/UILabelBMFont_Editor/GUI/missing-font.fnt",
     "res/cocosui/UIEditorTest/UILabelBMFont_Editor/GUI/missing-font.png"
 ];
+
+// test by jl----------
+var g_sysResource = [
+    "res/Images/CyanSquare.png",
+    "res/Images/MagentaSquare.png",
+    "res/Images/YellowSquare.png"
+    ];
+// test

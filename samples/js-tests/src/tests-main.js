@@ -219,6 +219,15 @@ var TestController = cc.LayerGradient.extend({
 TestController.YOffset = 0;
 var testNames = [
     {
+        title:"Sys Tests",
+        resource:g_sysResource,
+        platforms: PLATFORM_ALL,
+        linksrc:"src/SysTest/SysTest.js",
+        testScene:function () {
+            return new SysTestScene();
+        }
+    },
+    {
         title:"ActionManager Test",
         platforms: PLATFORM_ALL,
         linksrc:"src/ActionManagerTest/ActionManagerTest.js",
@@ -617,14 +626,7 @@ var testNames = [
             return new UnitTestScene();
         }
     },
-    {
-        title:"Sys Tests",
-        platforms: PLATFORM_ALL,
-        linksrc:"src/SysTest/SysTest.js",
-        testScene:function () {
-            return new SysTestScene();
-        }
-    },
+
     {
         title:"cocos2d JS Presentation",
         platforms: PLATFORM_JSB,

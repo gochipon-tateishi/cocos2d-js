@@ -270,11 +270,77 @@ var RestartGameLayerTest = SysTestBase.extend({
     }
 });
 
+// test by jl
+
+var createSpr = cc.Sprite.extend({
+    ctor:function(res,x,y,name){
+        this._super(res);
+        this.setPosition(x, y);
+        this.name = name;
+
+
+        cc.eventManager.addListener({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+            onTouchBegan: this.onTouchBegan,
+            onTouchMoved: this.onTouchMoved,
+            onTouchEnded: this.onTouchEnded
+        }, this);
+    },
+    onTouchBegan:function(touch, event){
+        var target = event.getCurrentTarget();
+        var pos = touch.getLocation();
+        var locationInNode = target.convertToNodeSpace(pos);
+        var s = target.getContentSize();
+        var rect = cc.rect(0, 0, s.width, s.height);
+        if(cc.rectContainsPoint(rect, locationInNode)){
+            return true;
+        }
+        return false;
+    },
+    onTouchMoved:function(touch, event){
+        var target = event.getCurrentTarget();
+        var pos = touch.getLocation();
+        var locationInNode = target.convertToNodeSpace(pos);
+        var s = target.getContentSize();
+        var rect = cc.rect(0, 0, s.width, s.height);
+        if(cc.rectContainsPoint(rect, locationInNode)){
+            target.x = pos.x;
+            target.y = pos.y;
+        }
+    },
+    onTouchEnded:function(touch, event){
+
+    }
+});
+
+var SpriteUserDefineSceneTest = SysTestBase.extend({
+    getTitle : function() {
+        return "SpriteUserDefineSceneTest";
+    },
+    restartGame:function()
+    {
+
+    },
+    ctor : function () {
+        this._super();
+        if(true){
+            for(var i=0;i<3;i++){
+                var sprObj = new createSpr("res/Images/CyanSquare.png",300,100 + i * 100,i);
+                this.addChild(sprObj)
+            }
+        }
+    }
+});
+
+// end test by jl
+
 //
 // Flow control
 //
 
 var arrayOfSysTest = [
+    SpriteUserDefineSceneTest,
     LocalStorageTest,
     CapabilitiesTest
 ];
