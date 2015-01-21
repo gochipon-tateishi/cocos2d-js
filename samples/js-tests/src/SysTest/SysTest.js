@@ -333,6 +333,34 @@ var SpriteUserDefineSceneTest = SysTestBase.extend({
     }
 });
 
+var OrbitCameraSceneTest = SysTestBase.extend({
+    getTitle : function() {
+        return "OrbitCameraSceneTest";
+    },
+    showAnim:function(){
+        var inAngleZ = 270;  //这里是一个起始Z轴角度，你要实现翻转角度通过这个参数来设置
+        var inDeltaZ = 90;    // 旋转的Z角差
+        var outDeltaZ = 90; //这里跟上面一样的
+        var outAngleZ = 0;
+        var duration = 3;//旋转的时间
+
+        var halfDuration = duration/2;
+        var outA = new cc.OrbitCamera(halfDuration, 1, 0, inAngleZ, inDeltaZ, 0, 0);
+
+        var spr = new cc.Sprite(s_pathB1);
+        spr.x = 400;
+        spr.y = 300;
+        this.addChild(spr);
+        spr.runAction(outA.repeatForever());
+    },
+
+    ctor : function () {
+        this._super();
+
+        this.showAnim();
+    }
+});
+
 // end test by jl
 
 //
@@ -340,6 +368,7 @@ var SpriteUserDefineSceneTest = SysTestBase.extend({
 //
 
 var arrayOfSysTest = [
+    OrbitCameraSceneTest,
     SpriteUserDefineSceneTest,
     LocalStorageTest,
     CapabilitiesTest
