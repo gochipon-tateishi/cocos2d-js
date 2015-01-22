@@ -392,7 +392,7 @@ var studioScale9TestScene = SysTestBase.extend({
 
     ctor : function () {
         this._super();
-        var csbObject = ccs.load("res/MainScene.json");
+        var csbObject = ccs.load("res/studiotest/scale9/MainScene.json");
         this.addChild(csbObject.node);
     }
 });
