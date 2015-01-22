@@ -1,0 +1,134 @@
+{
+  "ID": "b98e8e82-5b31-4f87-a3d9-6d3321a57c88",
+  "Version": "2.1.0.0",
+  "Type": "Scene",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 33,
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "2222222.png"
+            },
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 20,
+            "Scale9Width": 855,
+            "Scale9Height": 884,
+            "Tag": 34,
+            "PrePosition": {
+              "X": 0.375520825,
+              "Y": 0.546875
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 337.5,
+            "RightMargin": 576.5,
+            "TopMargin": 267.0,
+            "BottomMargin": 327.0,
+            "ActionTag": -856895301,
+            "Position": {
+              "X": 360.5,
+              "Y": 350.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 46.0,
+              "Y": 46.0
+            },
+            "FrameEvent": "",
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png"
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "Tag": 35,
+            "PrePosition": {
+              "X": 0.4237009,
+              "Y": 0.6731863
+            },
+            "PreSize": {
+              "X": 0.020833334,
+              "Y": 0.03125
+            },
+            "LeftMargin": 397.156952,
+            "RightMargin": 542.843,
+            "TopMargin": 195.757233,
+            "BottomMargin": 424.242767,
+            "ActionTag": 1883514505,
+            "Position": {
+              "X": 406.752869,
+              "Y": 430.839233
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.479796022,
+              "ScaleY": 0.329822719
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "FrameEvent": "",
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  }
+}

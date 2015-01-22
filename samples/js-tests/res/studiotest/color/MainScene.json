@@ -1,0 +1,128 @@
+{
+  "ID": "3bca5ef5-1a07-49ab-a207-e564febbdacf",
+  "Version": "2.1.0.0",
+  "Type": "Scene",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 40,
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "B": 156
+            },
+            "FirstColor": {
+              "R": 150,
+              "B": 156
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "Tag": 41,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Children": [
+              {
+                "FontSize": 20,
+                "LabelText": "Text Label",
+                "Tag": 42,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "ActionTag": 886839953,
+                "Position": {
+                  "X": 88.0,
+                  "Y": 122.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "CColor": {},
+                "Size": {
+                  "X": 100.0,
+                  "Y": 20.0
+                },
+                "FrameEvent": "",
+                "Name": "Text_1",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -166731095,
+            "Position": {
+              "X": 287.5,
+              "Y": 272.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 200.0
+            },
+            "FrameEvent": "",
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "FrameEvent": "",
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  }
+}

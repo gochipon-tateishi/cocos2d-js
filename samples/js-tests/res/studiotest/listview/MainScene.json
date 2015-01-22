@@ -1,0 +1,155 @@
+{
+  "ID": "df254101-a848-4bdf-ad21-eb94223eef88",
+  "Version": "2.1.0.0",
+  "Type": "Scene",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 10,
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "DirectionType": "Vertical",
+            "ComboBoxIndex": 1,
+            "EndColor": {},
+            "FirstColor": {
+              "R": 150,
+              "B": 177
+            },
+            "SingleColor": {
+              "R": 150,
+              "B": 177
+            },
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "BackColorAlpha": 102,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Name": "ListView_1",
+            "Tag": 17,
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PrePosition": {
+              "X": 0.276562542,
+              "Y": 0.34374997
+            },
+            "LeftMargin": 265.500031,
+            "RightMargin": 494.499969,
+            "TopMargin": 220.0,
+            "BottomMargin": 219.999985,
+            "ActionTag": 1304162470,
+            "Position": {
+              "X": 265.500031,
+              "Y": 219.999985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "FrameEvent": "",
+            "Size": {
+              "X": 200.0,
+              "Y": 200.0
+            },
+            "ScrollDirectionType": 0,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "Button",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png"
+                },
+                "PressedFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Press.png"
+                },
+                "NormalFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Normal.png"
+                },
+                "Scale9Enable": true,
+                "Scale9Width": 46,
+                "Scale9Height": 36,
+                "TouchEnable": true,
+                "Tag": 18,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "ActionTag": 355298580,
+                "Position": {
+                  "X": 23.0,
+                  "Y": 182.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "CColor": {},
+                "Size": {
+                  "X": 46.0,
+                  "Y": 36.0
+                },
+                "FrameEvent": "",
+                "Name": "Button_1",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ctype": "ListViewObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "FrameEvent": "",
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  }
+}
