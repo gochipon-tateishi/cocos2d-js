@@ -361,9 +361,33 @@ var OrbitCameraSceneTest = SysTestBase.extend({
     }
 });
 
-var studioTestScene = SysTestBase.extend({
+var studioListTestScene = SysTestBase.extend({
     getTitle : function() {
         return "studioTestScene";
+    },
+
+    ctor : function () {
+        this._super();
+        var csbObject = ccs.load("res/studiotest/listview/MainScene.json");
+        this.addChild(csbObject.node);
+    }
+});
+
+var studioColorTestScene = SysTestBase.extend({
+    getTitle : function() {
+        return "studioColorTestScene";
+    },
+
+    ctor : function () {
+        this._super();
+        var csbObject = ccs.load("res/studiotest/color/MainScene.json");
+        this.addChild(csbObject.node);
+    }
+});
+
+var studioScale9TestScene = SysTestBase.extend({
+    getTitle : function() {
+        return "studioScale9TestScene";
     },
 
     ctor : function () {
@@ -380,7 +404,9 @@ var studioTestScene = SysTestBase.extend({
 //
 
 var arrayOfSysTest = [
-    studioTestScene,
+    studioListTestScene,
+    studioScale9TestScene,
+    studioColorTestScene,
     OrbitCameraSceneTest,
     SpriteUserDefineSceneTest,
     LocalStorageTest,
