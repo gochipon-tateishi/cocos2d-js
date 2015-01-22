@@ -1095,6 +1095,19 @@ var g_ccs2 = [
 var g_sysResource = [
     "res/Images/CyanSquare.png",
     "res/Images/MagentaSquare.png",
-    "res/Images/YellowSquare.png"
+    "res/Images/YellowSquare.png",
+    //"res/2222222.png",
+    //"res/MainScene.csb",
+    //"res/MainScene.json",
+    //"res/Default/ImageFile.png"
+
+    "res/1111.jpg",
+    "res/MainScene.csb",
+    "res/MainScene.json",
+    "res/Default/Button_Disable.png",
+    "res/Default/Button_Normal.png",
+    "res/Default/Button_Press.png",
+    "res/Default/ImageFile.png"
+
     ];
 // test

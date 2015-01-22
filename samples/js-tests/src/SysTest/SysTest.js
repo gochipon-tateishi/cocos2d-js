@@ -361,6 +361,18 @@ var OrbitCameraSceneTest = SysTestBase.extend({
     }
 });
 
+var studioTestScene = SysTestBase.extend({
+    getTitle : function() {
+        return "studioTestScene";
+    },
+
+    ctor : function () {
+        this._super();
+        var csbObject = ccs.load("res/MainScene.json");
+        this.addChild(csbObject.node);
+    }
+});
+
 // end test by jl
 
 //
@@ -368,6 +380,7 @@ var OrbitCameraSceneTest = SysTestBase.extend({
 //
 
 var arrayOfSysTest = [
+    studioTestScene,
     OrbitCameraSceneTest,
     SpriteUserDefineSceneTest,
     LocalStorageTest,
