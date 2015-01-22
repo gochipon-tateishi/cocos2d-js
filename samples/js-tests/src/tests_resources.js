@@ -1102,8 +1102,14 @@ var g_sysResource = [
     //"res/Default/ImageFile.png"
 
     "res/1111.jpg",
-    "res/MainScene.csb",
-    "res/MainScene.json",
+    "res/studiotest/listview/MainScene.csb",
+    "res/studiotest/listview/MainScene.json",
+    "res/studiotest/listview/Default/Button_Disable.png",
+    "res/studiotest/listview/Default/Button_Normal.png",
+    "res/studiotest/listview/Default/Button_Press.png",
+    "res/studiotest/color/MainScene.json",
+    "res/stduiotest/scale9/MainScene.csb",
+    "res/stduiotest/scale9/MainScene.json",
     "res/Default/Button_Disable.png",
     "res/Default/Button_Normal.png",
     "res/Default/Button_Press.png",
