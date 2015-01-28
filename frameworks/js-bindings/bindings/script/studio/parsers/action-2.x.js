@@ -59,6 +59,21 @@
             cache[file] = action;
             cache[file].retain();
             return action.clone();
+        },
+
+        deferred: function(json, resourcePath, action, file){
+            if(cc.sys.isNative){
+                var animationlist = json["Content"]["Content"]["AnimationList"];
+                var length = animationlist ? animationlist.length : 0;
+                for (var i = 0; i < length; i++){
+                    var animationdata = animationlist[i];
+                    var info = { name: null, startIndex: null, endIndex: null };
+                    info.name = animationdata["Name"];
+                    info.startIndex = animationdata["StartIndex"];
+                    info.endIndex = animationdata["EndIndex"];
+                    action.addAnimationInfo(info);
+                }
+            }
         }
 
     });
@@ -203,6 +218,26 @@
                 frame.setZOrder(zorder);
                 return frame;
             }
+        },
+        {
+            name: "ActionValue",
+            handle: function (options) {
+
+                var frame = new ccs.InnerActionFrame();
+                var innerActionType = options["InnerActionType"];
+
+                var currentAnimationFrame = options["CurrentAniamtionName"];
+
+                var singleFrameIndex = options["SingleFrameIndex"];
+
+                frame.setInnerActionType(ccs.InnerActionType[innerActionType]);
+                frame.setSingleFrameIndex(singleFrameIndex);
+
+                frame.setEnterWithName(true);
+                frame.setAnimationName(currentAnimationFrame);
+
+                return frame;
+            }
         }
     ];
 
@@ -216,7 +251,8 @@
                 frames.forEach(function(frameData){
                     var frame = item.handle(frameData, resourcePath);
                     frame.setFrameIndex(frameData["FrameIndex"]);
-                    frame.setTween(frameData["Tween"]);
+                    var tween = frameData["Tween"] != null ? frameData["Tween"] : true;
+                    frame.setTween(tween);
                     timeline.addFrame(frame);
                 });
             }
