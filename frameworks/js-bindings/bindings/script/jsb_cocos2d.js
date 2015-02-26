@@ -26,7 +26,7 @@
 
 // CCConfig.js
 //
-cc.ENGINE_VERSION = "Cocos2d-JS v3.3 Beta0";
+cc.ENGINE_VERSION = "Cocos2d-JS v3.3";
 
 cc.FIX_ARTIFACTS_BY_STRECHING_TEXEL = 0;
 cc.DIRECTOR_STATS_POSITION = {x: 0, y: 0};
@@ -1461,6 +1461,7 @@ cc.TMXLayer.extend = cc.Class.extend;
 cc.TMXTiledMap.extend = cc.Class.extend;
 cc.TMXMapInfo.extend = cc.Class.extend;
 cc.TransitionScene.extend = cc.Class.extend;
+cc.GLProgram.extend = cc.Class.extend;
 
 
 // Cocos2d-html5 supports multi scene resources preloading.
@@ -2787,3 +2788,15 @@ _p.setDisabledSpriteFrame = function(frame) {
 }
 
 cc.MenuItemToggle.prototype.selectedItem = cc.MenuItemToggle.prototype.getSelectedItem;
+
+
+//
+// LabelTTF setDimensions support two parameters
+//
+cc.LabelTTF.prototype._setDimensions = cc.LabelTTF.prototype.setDimensions;
+cc.LabelTTF.prototype.setDimensions = function (dim, height) {
+    if (!isNaN(height)) {
+        dim = {width: dim, height: height};
+    }
+    this._setDimensions(dim);
+};
