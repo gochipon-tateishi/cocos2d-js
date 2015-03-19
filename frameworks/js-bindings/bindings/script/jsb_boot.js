@@ -101,7 +101,8 @@ cc.isString = function(obj) {
  * @returns {boolean}
  */
 cc.isArray = function(obj) {
-    return Object.prototype.toString.call(obj) == '[object Array]';
+    return Array.isArray(obj) ||
+        (typeof obj === 'object' && objectToString(obj) === '[object Array]');
 };
 
 /**
@@ -110,7 +111,7 @@ cc.isArray = function(obj) {
  * @returns {boolean}
  */
 cc.isUndefined = function(obj) {
-    return typeof obj == 'undefined';
+    return typeof obj === 'undefined';
 };
 
 /**
@@ -119,9 +120,8 @@ cc.isUndefined = function(obj) {
  * @returns {boolean}
  */
 cc.isObject = function(obj) {
-    var type = typeof obj;
-
-    return type == 'function' || (obj && type == 'object');
+    return obj.__nativeObj !== undefined ||
+        ( typeof obj === "object" && Object.prototype.toString.call(obj) === '[object Object]' );
 };
 
 /**
@@ -574,10 +574,11 @@ cc.loader = {
             });
         }
         else {
-            var tex = cc.textureCache._addImage(url);
-            if (tex instanceof cc.Texture2D)
-                cb && cb(null, tex);
-            else cb && cb("Load image failed");
+            cc.textureCache._addImageAsync(url, function (tex){
+                if (tex instanceof cc.Texture2D)
+                    cb && cb(null, tex);
+                else cb && cb("Load image failed");
+            });
         }
     },
     /**
@@ -932,8 +933,8 @@ cc.configuration = cc.Configuration.getInstance();
  * cc.textureCache is the global cache for cc.Texture2D
  */
 cc.textureCache = cc.director.getTextureCache();
-cc.TextureCache.prototype._addImage = cc.TextureCache.prototype.addImage;
-cc.TextureCache.prototype.addImage = function(url, cb, target) {
+cc.TextureCache.prototype._addImageAsync = cc.TextureCache.prototype.addImageAsync;
+cc.TextureCache.prototype.addImageAsync = function(url, cb, target) {
     var localTex = null;
     cc.loader.loadImg(url, function(err, tex) {
         if (err) tex = null;
@@ -943,6 +944,21 @@ cc.TextureCache.prototype.addImage = function(url, cb, target) {
         localTex = tex;
     });
     return localTex;
+};
+// Fix for compatibility with old APIs
+cc.TextureCache.prototype._addImage = cc.TextureCache.prototype.addImage;
+cc.TextureCache.prototype.addImage = function(url, cb, target) {
+    if (typeof cb === "function") {
+        return this.addImageAsync(url, cb, target);
+    }
+    else {
+        if (cb) {
+            return this._addImage(url, cb)
+        }
+        else {
+            return this._addImage(url);
+        }
+    }
 };
 /**
  * @type {Object}
@@ -1195,6 +1211,7 @@ cc._initSys = function(config, CONFIG_KEY){
      * @type {string}
      */
     locSys.OS_ANDROID = "Android";
+    locSys.OS_WP8 = "WP8";
     locSys.OS_UNKNOWN = "unknown";
 
     /**
@@ -1346,7 +1363,7 @@ cc._initSys = function(config, CONFIG_KEY){
         cc.log(str);
     }
 
-    locSys.isMobile = (locSys.os == locSys.OS_ANDROID || locSys.os == locSys.OS_IOS) ? true : false;
+    locSys.isMobile = (locSys.os == locSys.OS_ANDROID || locSys.os == locSys.OS_IOS || locSys.os == locSys.OS_WP8) ? true : false;
 
     locSys.language = (function(){
         var language = cc.Application.getInstance().getCurrentLanguage();
